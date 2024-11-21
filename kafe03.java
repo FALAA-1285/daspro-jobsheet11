@@ -27,7 +27,6 @@ public class Kafe03 {
             System.out.println("Menu tidak valid.");
             return hargaTotal;
         }
-
         if (kodePromo.equalsIgnoreCase("diskon50")) {
             System.out.println("Anda mendapatkan diskon 50%");
             diskon = 0.5 * hargaItem[pilihanMenu - 1] * banyakItem;
@@ -38,30 +37,23 @@ public class Kafe03 {
             System.out.println("Kode promo tidak valid.");
             diskon = 0;
         }
-
         hargaTotal += hargaItem[pilihanMenu - 1] * banyakItem - diskon;
         return hargaTotal;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int pilihMenu, banyakItem;
         String kodePromo, lanjut;
         double hargaTotal = 0;
-
         menu("Andi", true);
-
         while (true) {
             System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
             pilihMenu = sc.nextInt();
-
             System.out.print("Masukkan jumlah item yang ingin dipesan: ");
             banyakItem = sc.nextInt();
             System.out.print("Masukkan kode promo: ");
             kodePromo = sc.next();
-    
             hargaTotal = hitungTotalHarga(pilihMenu, banyakItem, kodePromo, hargaTotal);
-
             System.out.print("Apakah transaksi ingin dilanjutkan (y/n): ");
             lanjut = sc.next();
             if (lanjut.equalsIgnoreCase("n")) {
