@@ -12,7 +12,7 @@ public class Kubus03 {
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Masukkan panjang sisi: ");
+        System.out.print("Masukkan panjang sisi: ");
         int sisi = sc.nextInt();
 
         System.out.println("volume kubus: "+hitungVolume(sisi));
